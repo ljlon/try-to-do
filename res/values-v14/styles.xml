@@ -5,8 +5,45 @@
         AppBaseTheme from BOTH res/values/styles.xml and
         res/values-v11/styles.xml on API 14+ devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         <!-- API 14 theme customizations can go here. -->
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_apptheme</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Apptheme</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Apptheme</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Apptheme</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_apptheme</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_apptheme</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Apptheme</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Apptheme</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Apptheme</item>
     </style>
 
+    <style name="ActionBar.Solid.Apptheme" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:background">@drawable/ab_solid_apptheme</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_apptheme</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_apptheme</item>
+    </style>
+    
+    <style name="ActionBarTabStyle.Apptheme" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">
+		 <item name="android:background">@drawable/tab_indicator_ab_apptheme</item>
+    </style>
+    
+    <style name="DropDownNav.Apptheme" parent="@android:style/Widget.Holo.Light.Spinner">
+        <item name="android:background">@drawable/spinner_background_ab_apptheme</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_apptheme</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_apptheme</item>
+    </style>
+    
+     <style name="ActionButton.CloseMode.Apptheme" parent="@android:style/Widget.Holo.Light.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_apptheme</item>
+    </style>
+    
+    <style name="PopupMenu.Apptheme" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_apptheme</item>	
+    </style>
+
+    <style name="DropDownListView.Apptheme" parent="@android:style/Widget.Holo.Light.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_apptheme</item>
+    </style>
+    
 </resources>

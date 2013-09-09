@@ -1,15 +1,10 @@
 package com.example.secondandroid;
 
 /*必需引用apache.http相关类别来建立HTTP联机*/  
-import org.apache.http.HttpResponse;   
-import org.apache.http.NameValuePair;   
+import org.apache.http.HttpResponse;      
 import org.apache.http.client.ClientProtocolException;   
-import org.apache.http.client.entity.UrlEncodedFormEntity;   
-import org.apache.http.client.methods.HttpGet;  
-import org.apache.http.client.methods.HttpPost;   
+import org.apache.http.client.methods.HttpGet;   
 import org.apache.http.impl.client.DefaultHttpClient;   
-import org.apache.http.message.BasicNameValuePair;   
-import org.apache.http.protocol.HTTP;   
 import org.apache.http.util.EntityUtils;   
 
 import java.util.Locale;
@@ -19,19 +14,16 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.text.Spanned;
-import android.view.Gravity;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -61,6 +53,13 @@ public class MainActivity extends FragmentActivity implements
 		  public void handleMessage(Message msg) {
 		  Bundle bundle = msg.getData();
 		  strWebData = Html.fromHtml(bundle.getString("webData"));
+		  
+		  switch(getActionBar().getSelectedNavigationIndex()) {
+		  case 0:
+			  TextView dummyTextView = (TextView)findViewById(R.id.section_label);
+			  dummyTextView.setText(strWebData); 
+			  break;
+		  }
 	     }
 	 };
  
@@ -244,21 +243,23 @@ public class MainActivity extends FragmentActivity implements
 			View rootView = inflater.inflate(R.layout.fragment_main_dummy,
 					container, false);
 			TextView dummyTextView = (TextView)rootView.findViewById(R.id.section_label);
+			dummyTextView.setMovementMethod(ScrollingMovementMethod.getInstance());
 			
 			switch(getArguments().getInt(ARG_SECTION_NUMBER)) {
 			case 1:
-				dummyTextView.setText(getString(R.string.title_section1)); 
+				dummyTextView.setText(strWebData); 
 				break;
 			case 2:
 				dummyTextView.setText(getString(R.string.title_section2)); 
 				break;
 			case 3:
-				dummyTextView.setText(strWebData); 
+				dummyTextView.setText(getString(R.string.title_section3)); 
 				break;
 			}
 			
 			return rootView;
 		} 
+		
 	}
 
 }
