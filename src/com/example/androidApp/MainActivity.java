@@ -1,4 +1,4 @@
-package com.example.secondandroid;
+package com.example.androidapp;
 
 /*必需引用apache.http相关类别来建立HTTP联机*/  
 import org.apache.http.HttpResponse;      
