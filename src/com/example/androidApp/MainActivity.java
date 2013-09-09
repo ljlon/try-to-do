@@ -141,7 +141,7 @@ public class MainActivity extends FragmentActivity implements
 		public void run() {  
 			
 			/*声明网址字符串*/  
-		    String uriAPI = "http://ljlon.com";   
+		    String uriAPI = "http://www.ljlon.com/feed";   
 		    
 		    /*建立HTTP Get联机*/  
 		    HttpGet httpRequest = new HttpGet(uriAPI);   
