@@ -1,3 +1,3 @@
 try-to-do
 =========
-It's a group of experimental prjects
+It's a group of experimental projects
