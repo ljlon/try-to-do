@@ -1,3 +1,3 @@
 eBox
 =============
-A chrome app as cloudy drive client, support multi-drives.
+A chrome app as cloudy drive client, supports multi-drives.
